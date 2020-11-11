@@ -1,0 +1,9 @@
+.noxrc
+_nox
+config.yaml
+_*/
+_*.sh
+
+*.h
+*.m
+*.swift

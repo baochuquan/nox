@@ -1,0 +1,4 @@
+dependencies:
+  - gnu-sed
+  - grep
+  - jq
