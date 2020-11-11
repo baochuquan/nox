@@ -30,10 +30,10 @@ NOX 的安装仅仅需要三个步骤即可完成：
 - 执行安装脚本
 - 配置生效
 
-首先，执行如下命令，来克隆 NOX 项目（可以在任何目录下执行）。**注意：将 `ldap` 替换为自己的 `ldap`**。
+首先，执行如下命令，来克隆 NOX 项目（可以在任何目录下执行）。
 
 ```shell
-$ git clone "ssh://ldap@gerrit.zhenguanyu.com:29418/nox"
+$ git clone https://github.com/baochuquan/nox
 ```
 
 其次，执行如下命令，进入到 NOX 根目录下，执行 `install.sh` 脚本。
