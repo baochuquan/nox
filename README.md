@@ -68,15 +68,8 @@ $ ./uninstall.sh
 
 ---
 
-## Contribution
-在为项目作出贡献时，请在 code reviewer 中添加 @baocq。
-
-如果有任何已经或建议，请在 [NOX](https://confluence.zhenguanyu.com/display/~baocq/NOX) 下进行评论。
-
----
-
 ## Contact
-如果你在使用 NOX 中遇到了任何问题，可以通过企业微信或工作邮件等方式找 @baocq 来帮助你解决问题。
+如果你在使用 NOX 中遇到了任何问题，可以通过邮件找 baocq 来帮助你解决问题。
 
 ---
 
