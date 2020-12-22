@@ -40,6 +40,7 @@ echo "export NOX_CONFIG=\"$NOX_CONFIG\"" >> .noxrc
 echo "export NOX_SCRIPTS=\"$NOX_SCRIPTS\"" >> .noxrc
 echo "export NOX_TEMPLATES=\"$NOX_TEMPLATES\"" >> .noxrc
 echo "fpath=($NOX_ROOT/fpath \$fpath)" >> .noxrc
+echo "autoload -U compinit" >> .noxrc
 echo "compinit" >> .noxrc
 echo "unfunction _nox" >> .noxrc
 echo "autoload -U _nox" >> .noxrc
