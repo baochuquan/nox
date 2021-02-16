@@ -1,6 +1,7 @@
 #!/bin/sh
 
 source $NOX_ROOT/common/utils.sh
+source $NOX_ROOT/common/config.sh
 
 function check_dependency() {
     local target=$1
@@ -32,16 +33,16 @@ function register_nox_dependency() {
 
     # Read brewspec.yaml to install custom dependencies
     local brewspecFile="$NOX_CONFIG/brewspec.yaml"
-    local count=`yq r $brewspecFile --length dependencies`
+    local count=`brewspec_value_of dependencies | wc -l | tr -d ' '`
     if [[ -z $count || $count -lt 1 ]]; then
         echo "[nox] \`$NOX_CONFIG/brewspec.yaml\` did not define any brew dependency."
     else
         echo "[nox] start installing brew dependencies..."
-        local items=(`yq r $brewspecFile dependencies | sed "s/^- //" | tr "\n" " "`)
+        local items=(`brewspec_value_of dependencies | sed "s/^- //" | tr "\n" " "`)
         for item in $items; do
             (check_dependency $item) || (install_dependency $item)
         done
-    fi 
+    fi
 }
 
 function unregister_nox_dependency() {

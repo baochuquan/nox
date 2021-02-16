@@ -23,6 +23,7 @@ Description:
 Option:
     --help|-h:                                          -- 使用帮助
     --debug|-x:                                         -- 调试模式
+    --without-derived-data|-d:                          -- 不清空 DerivedData 目录
 EOF
 }
 
@@ -38,8 +39,9 @@ function _bytes_to_human() {
 
 function clean() {
     local debug=0
+    local withoutDerivedData=0
 
-    local ARGS=`ggetopt -o h,x --long help,debug -n 'Error' -- "$@"`
+    local ARGS=`ggetopt --options h,x,d --longoptions help,debug,without-derived-data -n 'Error' -- "$@"`
     if [ $? != 0 ]; then
         error "Invalid option..." >&2;
         exit 1;
@@ -55,6 +57,10 @@ function clean() {
                 ;;
             -x|--debug)
                 debug=1
+                shift
+                ;;
+            -d|--without-derived-data)
+                withoutDerivedData=1
                 shift
                 ;;
             --)
@@ -115,8 +121,12 @@ function clean() {
     echo 'Remove iOS Device Backups...'
     \rm -rfv ~/Library/Application\ Support/MobileSync/Backup/* &>/dev/null
 
-    echo 'Cleanup Xcode Derived Data and Archives...'
-    \rm -rfv ~/Library/Developer/Xcode/DerivedData/* &>/dev/null
+    echo 'Cleanup Xcode Derived Data...'
+    if [[ $withoutDerivedData == 0 ]]; then
+        \rm -rfv ~/Library/Developer/Xcode/DerivedData/* &>/dev/null
+    fi
+
+    echo 'Cleanup Xcode Archives...'
     \rm -rfv ~/Library/Developer/Xcode/Archives/* &>/dev/null
 
     echo "Cleanup Xcode EmbeddedAppDeltas"
