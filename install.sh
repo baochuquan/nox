@@ -54,9 +54,15 @@ nox system build -s
 # initialize config.yaml
 echo "[nox] ========================================"
 echo "[nox] start initializing \`$NOX_CONFIG/config.yaml\`..."
+if [[ -e $NOX_CONFIG/config.yaml ]]; then
+    # backup previous config.yaml
+    timestamp=$(date "+%Y%m%d-%H%M%S")
+    backupfile=".config-backup-$timestamp.yaml"
+    cat $NOX_CONFIG/config.yaml > $NOX_CONFIG/$backupfile
+fi
 cp $NOX_TEMPLATES/config-template.yaml $NOX_CONFIG/config.yaml
 ldap=`git config user.email | sed "s/@.*//g"`
-gsed -i "s/^# ldap: [a-z]*/ldap: $ldap/" $NOX_CONFIG/config.yaml
+gsed -i "s/^#ldap: [a-z]*/ldap: $ldap/" $NOX_CONFIG/config.yaml
 
 # Install success
 success ""

@@ -1,8 +1,10 @@
 .noxrc
 _nox
 config.yaml
+.config-backup*.yaml
 _*/
 _*.sh
+.DS_Store
 
 *.h
 *.m
