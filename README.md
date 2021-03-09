@@ -2,6 +2,8 @@
 
 ![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox.png)
 
+![Platform](http://img.shields.io/badge/platform-macOS-blue.svg?style=flat)
+
 ---
 
 你是否还在为执行 shell 脚本时，一层一层的查找脚本路径而感到烦恼？
