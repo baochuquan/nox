@@ -5,7 +5,7 @@
 ![Platform](http://img.shields.io/badge/platform-macOS-blue.svg?style=flat)
 ![Platform](http://img.shields.io/badge/language-zsh-brightgreen.svg?style=flat)
 ![Platform](http://img.shields.io/badge/tool-homebrew-orange.svg?style=flat)
-![Platform](http://img.shields.io/badge/license-MIT-pink.svg?style=flat)
+![Platform](http://img.shields.io/badge/license-MIT-red.svg?style=flat)
 
 ---
 
