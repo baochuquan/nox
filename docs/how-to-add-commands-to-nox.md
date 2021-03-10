@@ -1,11 +1,17 @@
-*  目录
-{:toc}
+
+- [环境变量](#环境变量)
+- [创建子命令](#创建子命令)
+  - [创建脚本示例](#创建脚本示例)
+  - [编写脚本示例](#编写脚本示例)
+- [执行脚本](#执行脚本)
+- [编译](#编译)
+- [调试模式](#调试模式)
+- [帮助提示](#帮助提示)
+- [小结](#小结)
 
 NOX 本质上是一个 Shell 脚本管理工具，它以系统命令调用的方式来执行指定的脚本，同时提供了自动补全功能，从而帮助用户快速索引脚本。
 
 由此可见，Shell 脚本才是 NOX 最重要的组成部分。关于 NOX 的开发，其本质上就是如何以 NOX 的规范开发 Shell 脚本。
-
----
 
 ## 环境变量
 
@@ -16,8 +22,6 @@ NOX 本质上是一个 Shell 脚本管理工具，它以系统命令调用的方
 - `NOX_CONFIG`：NOX 系统配置目录
 - `NOX_SCRIPTS`：NOX 管理的 Shell 脚本所存放的根目录
 - `NOX_TEMPLATES`：NOX 模板脚本及文件所存放的目录
-
----
 
 ## 创建子命令
 
@@ -193,7 +197,7 @@ function ace() {
     fi
 }
 
-# Execute current script
+## 执行脚本
 ace $*
 ```
 
@@ -212,8 +216,6 @@ $ nox poker ace -c 2 -r
 
 ![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-poker-ace-02.gif)
 
----
-
 ## 编译
 
 在创建了子目录、脚本之后，虽然可以通过系统命令的方式调用脚本，如上述例子中，可以通过 `nox poker ace` 来调用脚本，但是却没有自动补全功能。NOX 提供的 `nox system build` 命令就是用于编译生成自动补全文件，编译后会生成一个 `_nox` 文件，存放在 `NOX_ROOT/fpath` 目录下。编译命令执行完成之后，需要通过执行 `source ~/.zshrc` 命令来使之生效，或者重启终端生效。
@@ -228,8 +230,6 @@ $ source ~/.zshrc
 
 ![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-system-build-poker-ace.gif)
 
----
-
 ## 调试模式
 
 通过 `nox system create` 创建的脚本，默认都支持一个 `--debug` 和 `-x` 选项，可以将脚本的执行切换成为调试模式。调试模式能够打印出脚本所执行的每一行代码及其结果，便于开发者进行开发调试。
@@ -237,8 +237,6 @@ $ source ~/.zshrc
 以 `nox poker ace` 为例，可以采用如下方式使用调试模式执行脚本。
 
 ![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-poker-ace-debug.gif)
-
----
 
 ## 帮助提示
 
@@ -248,9 +246,8 @@ $ source ~/.zshrc
 
 ![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-poker-ace-help.gif)
 
----
 
-## 总结
+## 小结
 
 NOX 的开发非常简单，本质上就涉及到两条命令：
 - `nox system create`：创建子目录或脚本。
