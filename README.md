@@ -3,72 +3,56 @@
 ![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox.png)
 
 ![Platform](http://img.shields.io/badge/platform-macOS-blue.svg?style=flat)
-![Platform](http://img.shields.io/badge/language-zsh-brightgreen.svg?style=flat)
-![Platform](http://img.shields.io/badge/tool-homebrew-orange.svg?style=flat)
-![Platform](http://img.shields.io/badge/license-MIT-red.svg?style=flat)
+![Language](http://img.shields.io/badge/language-zsh-brightgreen.svg?style=flat)
+![Tool](http://img.shields.io/badge/tool-homebrew-orange.svg?style=flat)
+![License](http://img.shields.io/badge/license-MIT-red.svg?style=flat)
 
 ---
 
-你是否还在为执行 shell 脚本时，一层一层的查找脚本路径而感到烦恼？
+`nox` 是一个基于 zsh 的脚本管理工具。
 
-你是否还在为 shell 脚本参数的琐碎和复杂而感到痛苦？
+- [Features](#features)
+- [Installation](#installation)
+- [Update](#update)
+- [Uninstalltion](#uninstallation)
+- [License](#license)
 
-你是否还在因 `.zshrc` 注册一堆 shell 方法导致难以管理而感到沮丧？
 
-那么，你需要 NOX 来帮你解决使用 Shell 脚本时所遇到一系列困难！
+## Features
+- **系统调用**：以 `nox` 为主命令，脚本存储路径、脚本名称作为子命令，进行全局调用。
+- **自动补全**：支持 Tab 自动补全，加快命令的索引和调用。
+- **帮助选项**：每个命令默认支持帮助提示，通过附加 `--help` 或 `-h` 选项，即可查看命令的功能描述。
+- **调试模式**：每个命令默认支持调试模式，通过附加 `--debug` 或 `-d` 选项，即可进入命令的调试模式。
+- **私有命令**：支持私有命令，相关脚本文件不会加入 git 管理。
 
----
+## Installation
+**目前只支持 MacOS 系统，安装的前提是已经安装了 `zsh` 和 `brew`**。
 
-## Getting Started
-### Features
-- **系统调用**：将脚本名称及其路径节点转换为子命令，最终以系统命令的方式进行调用，如：`nox gerrit submit` 将调用 `gerrit` 目录下的 `submit.sh` 脚本进行执行。
-- **自动补全**：为所有的脚本及其选项注册自动补全功能，可以加速脚本的调用。
-- **帮助提示**：为每个命令提供了帮助提示，只要加上 `--help` 或 `-h` 选项，即可查看命令的功能描述。
-- **调试模式**：为每个脚本提供了调试模式，只要加上 `--debug` 或 `-d` 选项，即可查看脚本执行时每一行代码及其运行结果。
-- **私有命令**：允许用户创建私有脚本，同时还享受自动补全的功能。
-
-### Installation
-**目前只支持 MacOS 系统，前提是用户已经安装了 `zsh` 和 `brew`**。
-
-NOX 的安装仅仅需要三个步骤即可完成：
-- 克隆项目
-- 执行安装脚本
-- 配置生效
-
-首先，执行如下命令，来克隆 NOX 项目（可以在任何目录下执行）。
+`nox` 的安装步骤如下：
 
 ```shell
+# 克隆项目仓库
 $ git clone https://github.com/baochuquan/nox
+
+# 执行安装脚本
+$ cd nox && ./install.sh
+
+# 配置生效
+# source ~/.zshrc
 ```
 
-其次，执行如下命令，进入到 NOX 根目录下，执行 `install.sh` 脚本。
-
-```shel
-$ cd nox
-$ ./install.sh
-```
-
-最后，执行如下命令，使 NOX 配置生效。
-
-```shell
-$ source ~/.zshrc
-```
-
-安装完毕之后，就可以体验 NOX 中的功能了。请见工具索引。
-
-### Update
-如下所示，执行系统命令即可更新 NOX，享受最新的功能。
+## Update
+更新 `nox`，体验最新功能，命令如下：
 
 ```shell
 $ nox system update
 ```
 
 ### Uninstallation
-进入到 NOX 根目录下，执行 `uninstall.sh` 脚本，即可卸载。
+卸载 `nox`，命令如下：
 
 ```shell
-$ cd nox
-$ ./uninstall.sh
+$ cd nox && ./uninstall.sh
 ```
 
 ---
@@ -79,4 +63,4 @@ $ ./uninstall.sh
 ---
 
 ## License
-The NOX is released under the MIT license.
+`nox` is released under the MIT license.
