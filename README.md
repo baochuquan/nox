@@ -64,4 +64,4 @@ $ cd nox && ./uninstall.sh
 ![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-life-lunch.gif)
 
 ## License
-`nox` is released under the MIT license.
+NOX is released under the MIT license.
