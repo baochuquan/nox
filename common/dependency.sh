@@ -17,8 +17,6 @@ function install_dependency() {
 
 # 安装 NOX 所需的依赖
 function register_nox_dependency() {
-    export HOMEBREW_NO_AUTO_UPDATE=1
-
     echo "[nox] start installing system dependencies..."
     # Installing gnu-getopt
     local GGETOPT="/usr/local/bin/ggetopt"

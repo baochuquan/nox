@@ -17,6 +17,9 @@ source $NOX_COMMON/logo.sh
 source $NOX_COMMON/utils.sh
 source $NOX_COMMON/dependency.sh
 
+echo "[nox] ========================================"
+echo "[nox] nox may trigger \`brew update\`, please waiting for a while if it triggered."
+
 # installing dependencies
 echo "[nox] ========================================"
 echo "[nox] start register nox dependencies..."

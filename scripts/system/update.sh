@@ -92,6 +92,7 @@ function update() {
     source $NOX_COMMON/dependency.sh
     echo "[nox] ========================================"
     echo "[nox] start updating dependencies..."
+    export HOMEBREW_NO_AUTO_UPDATE=1
     register_nox_dependency
 
     echo "[nox] ========================================"
