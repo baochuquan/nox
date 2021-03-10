@@ -9,7 +9,7 @@
 
 ---
 
-NOX 是一个基于 zsh 的 Shell 脚本管理工具。
+NOX 是一个基于 zsh 的 shell 脚本管理工具。
 
 - [Features](#features)
 - [Installation](#installation)
