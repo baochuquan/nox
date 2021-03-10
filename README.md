@@ -32,7 +32,7 @@ NOX 是一个基于 zsh 的 shell 脚本管理工具。
 ## Installation
 **目前只支持 MacOS 系统，安装的前提是已经安装了 `zsh` 和 `brew`**。
 
-NOX 的安装步骤如下，安装时可能会触发 `brew update`。
+NOX 的安装步骤如下，安装时可能会触发 `brew update`，一旦触发可能会耗费一些时间来更新 brew，需要耐心等待一下。
 
 ```shell
 # 克隆项目仓库
@@ -60,6 +60,8 @@ $ cd nox && ./uninstall.sh
 ```
 
 ## Usage Examples
+
+![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-gerrit-submit.gif)
 
 ![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-life-lunch.gif)
 
