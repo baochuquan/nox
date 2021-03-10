@@ -15,6 +15,10 @@
 - [Installation](#installation)
 - [Update](#update)
 - [Uninstalltion](#uninstallation)
+- [Usage Examples](#usage-examples)
+- [How to add commands to nox](https://github.com/baochuquan/nox/blob/main/docs/how-to-add-commands-to-nox.md)
+- [Attention](https://github.com/baochuquan/nox/blob/main/docs/attention.md)
+- [About](https://github.com/baochuquan/nox/blob/main/docs/about.md)
 - [License](#license)
 
 
@@ -38,7 +42,7 @@ $ git clone https://github.com/baochuquan/nox
 $ cd nox && ./install.sh
 
 # 配置生效
-# source ~/.zshrc
+$ source ~/.zshrc
 ```
 
 ## Update
@@ -55,7 +59,8 @@ $ nox system update
 $ cd nox && ./uninstall.sh
 ```
 
----
+### Usage Examples
+
 
 ## Contact
 如果你在使用 NOX 中遇到了任何问题，可以通过邮件找 baocq 来帮助你解决问题。
