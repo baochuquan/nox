@@ -80,7 +80,7 @@ function lunch() {
     local configFile="$NOX_CONFIG/config.yaml"
     local count=`yq r $configFile --length restaurants`
     if [[ -z $count || $count -lt 1 ]]; then
-        error "The value of key \`restaurants\` config.yaml is not initialized. Please initialize it as a array. See example in \`$NOX_TEMPLATES/config-template.yaml.\`"
+        error "The value of key \`restaurants\` $NOX_CONFIG/config.yaml is not defined. Please initialize it as a array. See example in \`$NOX_TEMPLATES/config-template.yaml.\`"
         exit 1
     fi
 
