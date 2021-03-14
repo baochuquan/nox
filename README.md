@@ -29,6 +29,7 @@ NOX 是一个基于 zsh 的 shell 脚本管理工具。通过编译，可以将�
 
 ## Example
 关于下图中的示例，我在 `nox/scripts/poker/` 目录下，通过 `nox system create -s ace` 命令创建了一个符合规范的 shell 脚本 `ace.sh`。在开发完具体实现后，通过 `nox system build` 编译生成自动补全逻辑。然后执行 `source ~/.zshrc` 更新自动补全逻辑。最后，输入并结合 Tab 补全，得到上图中的效果。
+
 ![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-poker-ace-demo.gif)
 
 关于如何添加子命令，详见 [How to add commands to nox](https://github.com/baochuquan/nox/blob/main/docs/how-to-add-commands-to-nox.md)。
