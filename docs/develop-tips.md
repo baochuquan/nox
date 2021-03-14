@@ -31,12 +31,12 @@ NOX 要求脚本的每一个参数都要有一个对应选项，从而能够充�
 NOX 仓库中的 `.gitignore` 文件声明 git 会忽略以 `_` 为前缀的子目录或脚本。假如我们希望 `poker` 作为私有子命令集合，我们可以将 `poker` 改为 `_poker`，那么其目录下的所有脚本都会变成你的私有脚本。同时也能够享有自动补全的功能。只不过，命令的调用也将发生变化，如：`nox _poker ace`。
 
 ### 工具依赖
-`nox/config/brewspec.yaml`。
+`nox/config/brewspec.yaml` 是一个依赖描述文件，如果你的脚本依赖了某个 brew 工具，需要在此文件中进行描述。NOX 在安装或更新时会检查并安装该文件中所描述的工具。
 
 假如 `ace.sh` 脚本中需要依赖其他的一些工具，而这些工具是需要通过 `brew` 进行安装的，那么我们可以在 `NOX_CONFIG` 的 `brewspec.yaml` 文件中声明所依赖的工具。当用户执行 `nox system update` 时，NOX 会检查并安装 `brewspec.yaml` 中所定义的工具。
 
 ### 私有配置
-`nox/config/config.yaml`。
+`nox/config/config.yaml` 是一个私有配置文件，该文件不会加入 git 管理。
 
 假如 `ace.sh` 脚本中需要读取用户的私有配置，如用户的 `ldap` 信息，这些配置默认定义在 `NOX_CONFIG` 的 `config.yaml` 文件中，该文件不会被加入 git 管理。
 
