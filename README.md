@@ -28,7 +28,7 @@ NOX 是一个基于 zsh 的 shell 脚本管理工具。通过编译，可以将�
 - **私有命令**：支持私有命令，相关脚本文件不会加入 git 管理。
 
 ## Example
-关于下图中的示例，我在 `nox/scripts/poker/` 目录下，通过 `nox system create -s ace` 命令创建了一个符合规范的 shell 脚本 `ace.sh`。在开发完具体实现后，通过 `nox system build` 编译生成自动补全逻辑。然后执行 `source ~/.zshrc` 更新自动补全逻辑。最后，输入并结合 Tab 补全，得到上图中的效果。
+关于下图的示例中，首先，我在 `nox/scripts/poker/` 目录下，通过 `nox system create -s ace` 命令创建了一个符合规范的 shell 脚本 `ace.sh`。在开发完具体实现后，通过 `nox system build` 编译生成自动补全逻辑。然后执行 `source ~/.zshrc` 更新自动补全逻辑。最后，输入并结合 Tab 补全，得到上图中的效果。
 
 ![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-poker-ace-demo.gif)
 
