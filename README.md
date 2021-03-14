@@ -20,13 +20,14 @@ NOX 是一个基于 zsh 的 shell 脚本管理工具。通过编译，可以将�
 - [About](https://github.com/baochuquan/nox/blob/main/docs/about.md)
 - [License](#license)
 
-
 ## Features
 - **系统调用**：以 `nox` 为主命令，脚本存储路径、脚本名称作为子命令，进行全局调用。
 - **自动补全**：支持 Tab 自动补全，加快命令的索引和调用。
 - **帮助选项**：每个命令默认支持帮助提示，通过附加 `--help` 或 `-h` 选项，即可查看命令的功能描述。
 - **调试模式**：每个命令默认支持调试模式，通过附加 `--debug` 或 `-x` 选项，即可进入命令的调试模式。
 - **私有命令**：支持私有命令，相关脚本文件不会加入 git 管理。
+
+![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-poker-ace-demo.gif)
 
 ## Installation
 **目前只支持 MacOS 系统，安装的前提是已经安装了 `zsh` 和 `brew`**。
