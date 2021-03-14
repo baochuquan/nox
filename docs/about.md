@@ -15,4 +15,4 @@
 
 ![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-logo.png)
 
-一个个黑色的碎片代表 NOX 所管理的无数脚本，它们共同组成了 NOX 的全部功能。而所有这些脚本都是由 NOX 进行索引，从而供用户使用。
+一个个五彩斑斓的碎片代表 NOX 所管理的无数脚本，它们共同组成了 NOX 的全部功能。而所有这些脚本都是以 `nox` 作为主命令进行索引，方便用户快速调用。
