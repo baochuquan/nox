@@ -9,7 +9,7 @@
 
 通过对比这两个词汇在键盘上的键位与输入效率，可以发现 “nox” 的输入效率是更高的。因此，此项目被命名为 “nox”。
 
-![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-keyboard.png)
+![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-keyboard-layout.png)
 
 ## LOGO 设计
 
