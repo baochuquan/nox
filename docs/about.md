@@ -20,4 +20,4 @@
 ## 常见问题
 Q: 自动补全未生效
 
-A: 执行 `source ~/.zshrc` 或重启终端
+A: 首先执行 `nox system build` 编译生成最新的自动补全逻辑，然后执行 `source ~/.zshrc` 或重启终端重新加载自动补全逻辑。
