@@ -1,5 +1,5 @@
 
-
+![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox.png)
 
 ![Platform](http://img.shields.io/badge/platform-macOS-blue.svg?style=flat)
 ![Language](http://img.shields.io/badge/language-zsh-brightgreen.svg?style=flat)
