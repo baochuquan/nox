@@ -9,8 +9,10 @@
 
 通过对比这两个词汇在键盘上的键位与输入效率，可以发现 “nox” 的输入效率是更高的。因此，此项目被命名为 “nox”。
 
+![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-keyboard.png)
+
 ## LOGO 设计
 
-![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox.png)
+![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-logo.png)
 
 一个个黑色的碎片代表 NOX 所管理的无数脚本，它们共同组成了 NOX 的全部功能。而所有这些脚本都是由 NOX 进行索引，从而供用户使用。

@@ -15,7 +15,6 @@ NOX 是一个基于 zsh 的 shell 脚本管理工具。通过编译，可以将�
 - [Installation](#installation)
 - [Update](#update)
 - [Uninstalltion](#uninstallation)
-- [Usage Examples](#usage-examples)
 - [How to add commands to nox](https://github.com/baochuquan/nox/blob/main/docs/how-to-add-commands-to-nox.md)
 - [Attention](https://github.com/baochuquan/nox/blob/main/docs/attention.md)
 - [About](https://github.com/baochuquan/nox/blob/main/docs/about.md)
@@ -63,12 +62,6 @@ $ nox system update
 ```shell
 $ cd nox && ./uninstall.sh
 ```
-
-## Usage Examples
-
-![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-gerrit-submit.gif)
-
-![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-life-lunch.gif)
 
 ## License
 NOX is released under the MIT license.
