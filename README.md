@@ -16,7 +16,7 @@ NOX 是一个基于 zsh 的 shell 脚本管理工具。通过编译，可以将�
 - [Update](#update)
 - [Uninstalltion](#uninstallation)
 - [How to add commands to nox](https://github.com/baochuquan/nox/blob/main/docs/how-to-add-commands-to-nox.md)
-- [Attention](https://github.com/baochuquan/nox/blob/main/docs/attention.md)
+- [develop tips](https://github.com/baochuquan/nox/blob/main/docs/develop-tips.md)
 - [About](https://github.com/baochuquan/nox/blob/main/docs/about.md)
 - [License](#license)
 
