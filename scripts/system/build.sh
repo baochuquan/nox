@@ -112,7 +112,7 @@ function _options_from_usage_of() {
                 echo "`space $spaceBase`\"${opt1}:${desc}\"" >> $autocompleteFile
             fi
 
-            if [[ ! -z $opt2 && ! -z $desc ]]; then
+            if [[ ! -z $opt2 && ! -z $desc && $opt2 != $opt1 ]]; then
                 echo "[nox] building option \`${opt2}\` for subcommand \`${prefixName}\`; description: ${desc}"
                 echo "`space $spaceBase`\"${opt2}:${desc}\"" >> $autocompleteFile
             fi
