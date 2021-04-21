@@ -8,7 +8,7 @@
 
 ---
 
-**NOX 解决了什么问题？**NOX 提供了一种优雅地管理 shell 脚本的方式，详见 [如何优雅地管理你的 shell 脚本？](http://chuquan.me/2021/04/05/how-to-manage-your-shell-scripts-gracefully/) 
+**NOX 解决了什么问题？** NOX 提供了一种优雅地管理 shell 脚本的方式，详见 [如何优雅地管理你的 shell 脚本？](http://chuquan.me/2021/04/05/how-to-manage-your-shell-scripts-gracefully/) 
 
 NOX 是一个基于 zsh 的 shell 脚本管理工具。通过编译，可以将符合规范的 shell 脚本转换为以 `nox` 为主命令，脚本路径、脚本名称为子命令的系统命令。同时提供了强大的 Tab 自动补全功能，实现子命令的快速查找。
 
