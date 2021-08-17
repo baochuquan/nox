@@ -23,7 +23,11 @@ function register_nox_dependency() {
     if [[ ! -x $GGETOPT ]]; then
         (check_dependency gnu-getopt) || (install_dependency gnu-getopt)
         local GNU_GETOPT=`brew list gnu-getopt | grep "bin"`
-        ln -s $GNU_GETOPT $GGETOPT
+        if [[ `arch` == "arm64" ]]; then
+            sudo ln -s $GNU_GETOPT $GGETOPT
+        else 
+            ln -s $GNU_GETOPT $GGETOPT
+        fi
     fi
 
     # Installing yq
