@@ -4,7 +4,7 @@ source $NOX_COMMON/utils.sh
 
 function config_value_of() {
     local configFile="$NOX_CONFIG/config.yaml"
-    local version=`yq --version | cut -d ' ' -f3 | cut -d '.' -f1`
+    local version=`yq --version | tr ' ' '\n' | tail -n1 | cut -d '.' -f1`
     local value
     if [[ $version -ge 4 ]]; then
         value=`yq e ".$1" $configFile`
