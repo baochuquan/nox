@@ -80,7 +80,7 @@ function current_activity() {
     fi
 
     # start
-    deviceIp=$(adb shell netcfg |grep wlan0|tr ' ' '\n'|grep /|tr '//' '\n'|grep '\.')
+    deviceIp=$(adb shell netcfg | grep wlan0 | tr ' ' '\n' | grep / | tr '//' '\n' | grep '\.')
     adb tcpip 5557
     adb connect $deviceIp:5557
     adb devices

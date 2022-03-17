@@ -84,7 +84,7 @@ function current_activity() {
     git clean --ffd
     git submodule foreach --recursive git reset --hard
     git submodule foreach --recursive git clean -ffd
-    git st | grep "lib" | tr ' ' '\n'|grep "lib"|xargs rm -rf
+    git st | grep "lib" | tr ' ' '\n' | grep "lib" | xargs rm -rf
     git sbu --recursive --init
 
     if [[ $debug == 1 ]]; then
