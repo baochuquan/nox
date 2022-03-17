@@ -13,6 +13,7 @@ export NOX_COMMON=$NOX_ROOT/common
 export NOX_CONFIG=$NOX_ROOT/config
 export NOX_SCRIPTS=$NOX_ROOT/scripts
 export NOX_TEMPLATES=$NOX_ROOT/templates
+export NOX_CACHE=$NOX_ROOT/cache
 source $NOX_COMMON/logo.sh
 source $NOX_COMMON/utils.sh
 source $NOX_COMMON/dependency.sh
@@ -42,6 +43,7 @@ echo "export NOX_COMMON=\"$NOX_COMMON\"" >> .noxrc
 echo "export NOX_CONFIG=\"$NOX_CONFIG\"" >> .noxrc
 echo "export NOX_SCRIPTS=\"$NOX_SCRIPTS\"" >> .noxrc
 echo "export NOX_TEMPLATES=\"$NOX_TEMPLATES\"" >> .noxrc
+echo "export NOX_CACHE=\"$NOX_CACHE\"" >> .noxrc
 echo "fpath=($NOX_ROOT/fpath \$fpath)" >> .noxrc
 echo "autoload -U compinit" >> .noxrc
 echo "compinit" >> .noxrc
