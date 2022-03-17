@@ -5,6 +5,7 @@ config.yaml
 _*/
 _*.sh
 .DS_Store
+/cache/
 
 *.h
 *.m

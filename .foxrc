@@ -1,0 +1,13 @@
+
+export FOX_ROOT="/Users/lizhe/fox/fox"
+export FOX_NAME="fox"
+export FOX_COMMON="/Users/lizhe/fox/fox/common"
+export FOX_CONFIG="/Users/lizhe/fox/fox/config"
+export FOX_SCRIPTS="/Users/lizhe/fox/fox/scripts"
+export FOX_TEMPLATES="/Users/lizhe/fox/fox/templates"
+export FOX_CACHE="/Users/lizhe/fox/fox/cache"
+fpath=(/Users/lizhe/fox/fox/fpath $fpath)
+autoload -U compinit
+compinit
+unfunction _fox
+autoload -U _fox
