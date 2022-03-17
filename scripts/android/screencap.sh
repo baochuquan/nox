@@ -4,7 +4,7 @@
 ##
 ##  Filename: screencap.sh
 ##  Author: lizhe
-##  E-mail: lizhe@fenbi.com
+##  E-mail: lizhejiayou@foxmail.com
 ##  Date: 2021年 2月 9日 星期二 18时00分10秒 CST
 ##
 ##############################################################################

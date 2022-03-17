@@ -4,7 +4,7 @@
 ##
 ##  Filename: current-activity.sh
 ##  Author: lizhe
-##  E-mail: lizhe@fenbi.com
+##  E-mail: lizhejiayou@foxmail.com
 ##  Date: 2021年 2月 9日 星期二 18时33分39秒 CST
 ##
 ##############################################################################
@@ -16,7 +16,7 @@ source $NOX_COMMON/config.sh
 function _usage_of_current_activity() {
     cat << EOF
 Usage:
-    current-activity
+    clean-lib
 
 Description:
     清理全部 submodel

@@ -4,7 +4,7 @@
 ##
 ##  Filename: current-activity.sh
 ##  Author: lizhe
-##  E-mail: lizhe@fenbi.com
+##  E-mail: lizhejiayou@foxmail.com
 ##  Date: 2021年 2月 9日 星期二 18时33分39秒 CST
 ##
 ##############################################################################
@@ -80,7 +80,7 @@ function current_activity() {
     fi
 
     # start
-    adb shell dumpsys activity top | grep ACTIVITY | grep fenbi
+    adb shell dumpsys activity top | grep ACTIVITY
 
 
     if [[ $debug == 1 ]]; then
