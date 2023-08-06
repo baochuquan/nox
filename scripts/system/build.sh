@@ -96,13 +96,12 @@ function _options_from_usage_of() {
     if [[ $length == 0 ]]; then
         warning "[nox] `_usage_of_${prefixName}` in `${scriptName}` did not define any options."
     fi
-    local options=(`cat $scriptName | tail -n +$start | head -n $length | tr -d " " | tr -d '"' | tr "\n" " "`)
-    local size=${#options[*]}
-    local index=1
-    while [[ $index -le $size ]]; do
-        local content=${options[$index]}
-        if [[ "$content" =~ ^--.+:.+ ]]; then
-            local desc=`echo $content | cut -d ":" -f2 | sed "s/^--//"`
+
+    local options="$(cat $scriptName | tail -n +$start | head -n $length)"
+    while read line; do
+        local content=$line
+        if [[ "$content" =~ ^\ *--.+:.+ ]]; then
+            local desc=`echo $content | cut -d ":" -f2 | sed "s/^ *--//"`
             local opts=`echo $content | cut -d ":" -f1`
             local opt1=`echo $opts | cut -d "|" -f1`
             local opt2=`echo $opts | cut -d "|" -f2`
@@ -117,8 +116,7 @@ function _options_from_usage_of() {
                 echo "`space $spaceBase`\"${opt2}:${desc}\"" >> $autocompleteFile
             fi
         fi
-        index=$[ $index + 1 ]
-    done
+    done <<< "$options"
 }
 
 function _options_from_script() {

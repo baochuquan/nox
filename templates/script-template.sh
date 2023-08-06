@@ -19,18 +19,39 @@ Usage:
     script-template --a-long --b-long argB --c-long argC
 
 Description:
-    script-template 相关功能
+    script-template related usage.
 
 Option:
-    --help|-h:                                          -- 使用帮助
-    --debug|-x:                                         -- 调试模式
-    --a-long|-a:                                        -- 布尔类型选项
-    --b-long|-b:                                        -- 带一个参数
-    --c-long|-c:                                        -- 带一个可选参数
+    --help|-h:                                          -- using help
+    --debug|-x:                                         -- debug mode
+    --a-long|-a:                                        -- boolean option
+    --b-long|-b:                                        -- option with one parameter
+    --c-long|-c:                                        -- option with an optional parameter
 
 EOF
 }
 
+##########################################################################################################################
+#
+# English note
+# getopt command format description:
+#   -o: means define short option
+#       Example explanation: `ab:c::` defines three option types.
+#           a There is no colon after a, which means that the defined a option is a switch type (true/false), and no additional parameters are required. Using the -a option means true.
+#           b Followed by a colon, it means that the defined b option requires additional parameters, such as: `-b 30`
+#           c Followed by a double colon, it means that the defined c option has an optional parameter, and the optional parameter must be close to the option, such as: `-carg` instead of `-c arg`
+#   -long: means define long options
+#       Example explanation: `a-long,b-long:,c-long::`. The meaning is basically the same as above.
+#   "$@": 表示参数本身的列表，也不包括命令本身
+#   -n: 表示出错时的信息
+#   --: A list representing the arguments themselves, not including the command itself
+#       How to create a directory with -f
+#       `mkdir -f` will fail because -f will be parsed as an option by mkdir
+#       `mkdir -- -f` will execute successfully, -f will not be considered as an option
+#
+##########################################################################################################################
+#
+# 中文注释
 # getopt 命令格式说明:
 #   -o: 表示定义短选项
 #       示例解释: ab:c:: 定义了三个选项类型。
@@ -45,6 +66,8 @@ EOF
 #       如何创建一个 -f 的目录
 #       mkdir -f 会执行失败，因为 -f 会被 mkdir 当做选项来解析
 #       mkdir -- -f 会执行成功，-f 不会被当做选项
+#
+##########################################################################################################################
 
 function script_template() {
     local debug=0
@@ -54,9 +77,9 @@ function script_template() {
         error "Invalid option..." >&2;
         exit 1;
     fi
-    # 重新排列参数的顺序
+    # rearrange the order of parameters
     eval set -- "$ARGS"
-    # 经过 getopt 的处理，下面处理具体选项。
+    # after being processed by getopt, the specific options are dealt with below.
     while true ; do
         case "$1" in
             -h|--help)

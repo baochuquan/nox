@@ -16,16 +16,16 @@ source $NOX_COMMON/config.sh
 function _usage_of_ace() {
     cat << EOF
 Usage:
-    ace [--count <count>] [-r]
+    nox poker ace [--count <count>] [--reverse]
 
 Description:
-    ace 相关功能
+    Print poker numbers.
 
 Option:
-    --help|-h:                                          -- 使用帮助
-    --debug|-x:                                         -- 调试模式
-    --reverse|-r:                                       -- 是否逆序打印，无改选项则正序打印
-    --count|-c:                                         -- 打印次数，无该选项则打印一遍
+    --help|-h:                                          -- using help
+    --debug|-x:                                         -- debug mode
+    --reverse|-r:                                       -- whether to print in reverse order, or print in normal order without this option
+    --count|-c:                                         -- the number of times to print, if there is no option, it will be printed once
 
 EOF
 }
