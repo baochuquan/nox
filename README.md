@@ -17,4 +17,6 @@ Some advanced programmers may define shell scripts in their shell's run control 
 
 Fortunately, nox completely solves these problems. It generates a system command with nox as the root command and the path as a subcommand, based on your script's path, allowing you to call it globally. For example, if your script's path is `nox/scripts/poker/ace.sh`, nox will generate a corresponding system command `nox poker ace`. This way, you can globally call the script using this command.
 
-At this point, you might ask if this means you still have to remember a series of subcommands. In fact, you don't. Because nox supports tab completion, you can use the tab key for hints when you forget the available subcommands. When the tab key no longer provides subcommand suggestions, you can enter a '-' and continue pressing the tab key for more hints, which will then display the available options for the command.
+At this point, you might ask if this means you still have to remember a series of subcommands. In fact, you don't. Because nox supports tab completion, you can use the tab key for hints when you forget the available subcommands. When the tab key no longer provides subcommand suggestions, you can enter a '-' and continue pressing the tab key for more hints, which will then display the available options for the command. The following gif demonstrates the command search feature of nox. 
+
+![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-example.gif)
