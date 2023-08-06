@@ -6,7 +6,7 @@
 ![Tool](http://img.shields.io/badge/tool-homebrew-orange.svg?style=flat)
 ![License](http://img.shields.io/badge/license-MIT-red.svg?style=flat)
 
-[简体中文](TODO)
+[简体中文](https://github.com/baochuquan/nox/blob/main/README-cn.md)
 
 - [What is nox?](#what-is-nox)
 - [Why is nox?](#why-is-nox)
@@ -69,6 +69,13 @@ $ cd nox && ./install.sh
 # let the configuration take effect
 $ source ~/.zshrc
 
+```
+
+# Update
+To update nox and experience the latest features, the command is as follows:
+
+```sh
+$ nox system update
 ```
 
 # Uninstallation
