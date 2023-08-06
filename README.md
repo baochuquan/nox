@@ -22,11 +22,11 @@ At this point, you might ask if this means you still have to remember a series o
 ![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-example.gif)
 
 # Features
-[x] **System commands**: Nox will generate a system command with `nox` as the root command and the path as the subcommand for every script, which supports global.
-[x] **Auto-completion**: Support Tab auto-completion to speed up command indexing and calling.
-[x] **Help option**: Each command supports help prompts by default. By adding the `--help` or `-h` option, you can view the description of the command.
-[x] **Debug mode**: Each command supports debug mode by default, and you can enter the debug mode of the command by adding the `--debug` or `-x` option.
-[x] **Private commands**: Support private commands, and related script files will not be added to git management.
+- [x] **System commands**: Nox will generate a system command with `nox` as the root command and the path as the subcommand for every script, which supports global.
+- [x] **Auto-completion**: Support Tab auto-completion to speed up command indexing and calling.
+- [x] **Help option**: Each command supports help prompts by default. By adding the `--help` or `-h` option, you can view the description of the command.
+- [x] **Debug mode**: Each command supports debug mode by default, and you can enter the debug mode of the command by adding the `--debug` or `-x` option.
+- [x] **Private commands**: Support private commands, and related script files will not be added to git management.
 
 # Installation
 Currently, nox only supports MacOS system, before installing NOX, zsh and brew need to be installed first.
