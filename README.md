@@ -1,11 +1,12 @@
 ![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-logo.png)
 
+[简体中文](TODO)
+---
+
 ![Platform](http://img.shields.io/badge/platform-macOS-blue.svg?style=flat)
 ![Language](http://img.shields.io/badge/language-zsh-brightgreen.svg?style=flat)
 ![Tool](http://img.shields.io/badge/tool-homebrew-orange.svg?style=flat)
 ![License](http://img.shields.io/badge/license-MIT-red.svg?style=flat)
-
-[简体中文]
 
 - [What is nox?](#what-is-nox)
 - [Why is nox?](#why-is-nox)
