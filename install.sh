@@ -7,19 +7,18 @@ if command -v nox >/dev/null 2>&1; then
     exit 1
 fi
 
+echo "[nox] ========================================"
+echo "[nox] nox may trigger \`brew update\`, please waiting for a while if it triggered."
+
 export NOX_ROOT=`pwd`
 export NOX_NAME="nox"
 export NOX_COMMON=$NOX_ROOT/common
 export NOX_CONFIG=$NOX_ROOT/config
 export NOX_SCRIPTS=$NOX_ROOT/scripts
 export NOX_TEMPLATES=$NOX_ROOT/templates
-export NOX_CACHE=$NOX_ROOT/cache
 source $NOX_COMMON/logo.sh
 source $NOX_COMMON/utils.sh
 source $NOX_COMMON/dependency.sh
-
-echo "[nox] ========================================"
-echo "[nox] nox may trigger \`brew update\`, please waiting for a while if it triggered."
 
 # installing dependencies
 echo "[nox] ========================================"
@@ -31,7 +30,11 @@ echo "[nox] ========================================"
 echo "[nox] start installing \`nox\`..."
 _TARGET="/usr/local/bin"
 _TARGET_NOX="${_TARGET}/${NOX_NAME}"
-ln -s $NOX_ROOT/nox.sh $_TARGET_NOX
+if [[ -w $_TARGET_NOX ]]; then
+    ln -s $NOX_ROOT/nox.sh $_TARGET_NOX
+else
+    sudo ln -s $NOX_ROOT/nox.sh $_TARGET_NOX
+fi
 
 # initialize .noxrc
 echo "[nox] ========================================"
@@ -43,7 +46,6 @@ echo "export NOX_COMMON=\"$NOX_COMMON\"" >> .noxrc
 echo "export NOX_CONFIG=\"$NOX_CONFIG\"" >> .noxrc
 echo "export NOX_SCRIPTS=\"$NOX_SCRIPTS\"" >> .noxrc
 echo "export NOX_TEMPLATES=\"$NOX_TEMPLATES\"" >> .noxrc
-echo "export NOX_CACHE=\"$NOX_CACHE\"" >> .noxrc
 echo "fpath=($NOX_ROOT/fpath \$fpath)" >> .noxrc
 echo "autoload -U compinit" >> .noxrc
 echo "compinit" >> .noxrc
@@ -72,7 +74,7 @@ gsed -i "s/^#ldap: [a-z]*/ldap: $ldap/" $NOX_CONFIG/config.yaml
 # Install success
 success ""
 success ""
-print_logo
+print_colorful_logo
 success "                                                                   ... is now installed!"
 success ""
 success "        Before you use nox! Please execute \"source ~/.zshrc\" to make sure that the nox configurations are ready!"
