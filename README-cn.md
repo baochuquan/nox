@@ -8,7 +8,7 @@
 
 ---
 
-[English](https://github.com/baochuquan/nox)
+[English](https://github.com/baochuquan/nox/README.md)
 
 **NOX 解决了什么问题？** NOX 提供了一种优雅地管理 shell 脚本的方式，详见 [《如何优雅地管理你的 shell 脚本？》](http://chuquan.me/2021/04/05/how-to-manage-your-shell-scripts-gracefully/) 一文。
 
@@ -19,24 +19,24 @@ NOX 是一个基于 zsh 的 shell 脚本管理工具。通过编译，可以将�
 - [Features](#features)
 - [Installation](#installation)
 - [Uninstallation](#uninstallation)
-- [How to add commands for nox?](#how-to-add-commands-for-nox?)
-    - [Create Subcommand](#create-subcommand)
-        - [Create script](#create-script)
-        - [Edit Script](#edit-script)
-        - [Execute Script](#execute-script)
-    - [Build](#build)
-    - [Debug mode](#debug-mode)
-    - [Help prompt](#help-prompt)
-- [Develop tips](#develop-tips)
-    - [Environment variables](#environment-variables)
-    - [Script parameters](#script-parameters)
-    - [Naming conventions](#naming-conventions)
-    - [Function definition](#function-definition)
-    - [Function reference](#function-reference)
-    - [Private scripts](#private-scripts)
-    - [Tool dependency](#tool-dependency)
-    - [Private configuration](#private-configuration)
-    - [Programming syntax](#programming-syntax)
+- [如何为 nox 添加命令?](#如何为-nox-添加命令?)
+    - [创建子命令](#创建子命令)
+    - [创建脚本](#创建脚本)
+    - [编辑脚本](#编辑脚本)
+    - [执行脚本](#执行脚本)
+    - [编译](#编译)
+    - [调试模式](#调试模式)
+    - [帮助提示](#帮助提示)
+- [开发提示](#开发提示)
+    - [环境变量](#环境变量)
+    - [脚本参数](#脚本参数)
+    - [命名规范](#命名规范)
+    - [函数定义](#函数定义)
+    - [函数引用](#函数引用)
+    - [私有脚本](#私有脚本)
+    - [工具依赖](#工具依赖)
+    - [私有配置](#私有配置)
+    - [编程语法](#编程语法)
 - [License](#license)
 
 ## What is nox?
@@ -94,7 +94,7 @@ $ nox system update
 $ cd nox && ./uninstall.sh
 ```
 
-# 如何为 NOX 添加命令
+# 如何为 nox 添加命令
 
 ## 创建子命令
 
@@ -110,7 +110,7 @@ $ nox system create -d <dirname>
 $ nox system create -s <scriptname>
 ```
 
-### 创建目录示例
+## 创建目录
 例如，我们希望创建一个名为 `poker` 的子目录，我们可以在 `NOX_SCRIPTS` 目录下执行如下命令：
 
 ```sh
@@ -121,7 +121,7 @@ $ nox system create -d poker
 
 进入新创建的 `poker` 目录，我们会发现该目录下默认生成一个 `.description` 隐藏文件，该文件描述了 `poker` 这个子目录分类下的脚本的主要功能。NOX 自动补全系统会读取 `.description` 中的描述信息。
 
-### 创建脚本示例
+## 创建脚本
 在上述例子的基础上，我们进入 `poker` 子目录，创建一个 `ace.sh` 脚本，我们可以执行如下命令（**注：命令中无需添加 `.sh` 后缀**）：
 
 ```sh
@@ -139,7 +139,7 @@ $ nox poker ace
 
 ![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-poker-ace-01.gif)
 
-### 编写脚本示例
+## 编辑脚本
 接下来，我们对 `ace.sh` 脚本进行改写，使其执行能够打印 `A, 2, 3, 4, 5, 6, 7, 9, 10, J, Q, K, Joker`。同时支持两个选项：
 - `--count`（短选项：`-c`）：用户需要输入一个值，表示打印的次数。无该选项则表示打印一遍。
 - `--reverse`（短选项：`-r`）：开关值选项，有该选项则表示逆序打印，无该选项则表示正序打印。
@@ -274,7 +274,7 @@ function ace() {
 ace $*
 ```
 
-### 执行脚本
+## 执行脚本
 然后，我们就可以执行 `nox poker ace` 并加上相关的选项来执行脚本。
 
 ```shell

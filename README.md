@@ -14,10 +14,10 @@
 - [Installation](#installation)
 - [Uninstallation](#uninstallation)
 - [How to add commands for nox?](#how-to-add-commands-for-nox?)
-    - [Create Subcommand](#create-subcommand)
-        - [Create script](#create-script)
-        - [Edit Script](#edit-script)
-        - [Execute Script](#execute-script)
+    - [Create directory](#create-directory)
+    - [Create script](#create-script)
+    - [Edit Script](#edit-script)
+    - [Execute Script](#execute-script)
     - [Build](#build)
     - [Debug mode](#debug-mode)
     - [Help prompt](#help-prompt)
@@ -98,7 +98,7 @@ $ nox system create -d <your-dirname>
 $ nox system create -s <your-scriptname>
 ```
 
-## Create Subcommand
+## Create directory
 For example, if we want to create a subdirectory named `poker`, we can execute the following command in the `NOX_SCRIPTS` directory:
 
 ```sh
@@ -109,7 +109,7 @@ TODO: @baocq
 
 Enter the newly created `poker` directory, we will find that there is a default hidden file named `.description` generated in the directory. This file describes the main functions of the scripts in the `poker` subdirectory category. The nox auto-completion system will read the description information from the `.description` file.
 
-### Create script
+## Create script
 Based on the previous example, we can go to the `poker` subdirectory and create an `ace.sh` script by executing the following command (note: there is no need to add the `.sh` extension in the command):
 
 ```sh
@@ -126,7 +126,7 @@ $ nox poker ace
 
 TODO: @baocq
 
-### Edit Script
+## Edit Script
 Next, let's modify the `ace.sh` script so that it can print A, 2, 3, 4, 5, 6, 7, 9, 10, J, Q, K, Joker. And support two options:
 - `--count` (short option: `-c`): The user needs to enter a value, indicating the number of times to print. If this option is not present, it will print once. 
 - `--reverse` (short option: `-r`): A toggle value option. If this option is present, it means to print in reverse order; otherwise, print in ascending order.
@@ -264,7 +264,7 @@ function ace() {
 ace $*
 ```
 
-### Execute Script
+## Execute Script
 After that, we can execute the script by running `nox poker ace` and adding the relevant options.
 
 ```sh
