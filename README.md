@@ -5,6 +5,22 @@
 ![Tool](http://img.shields.io/badge/tool-homebrew-orange.svg?style=flat)
 ![License](http://img.shields.io/badge/license-MIT-red.svg?style=flat)
 
+[简体中文]
+
+- [What is nox?](#What is nox?)
+- [Why is nox?](#Why is nox?)
+- [Features](#Features)
+- [Installation](#Installation)
+- [Uninstallation](#Uninstallation)
+- [How to add commands for nox?](#How to add commands for nox?)
+    - [Create Subcommand](#Create Subcommand)
+        - [Create script(#Create script)
+        - [Edit Script](#Edit Script)
+        - [Execute Script](#Execute Script)
+    - [Build](#Build)
+    - [Debug Mode](#Debug Mode)
+    - [Help prompt](#Help prompt)
+
 # What is nox?
 Nox is a zsh-based shell scripts management tool, which can centralizes your scripts and convert them into system commands.
 
