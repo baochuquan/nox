@@ -2,9 +2,23 @@
 
 source $NOX_COMMON/utils.sh
 
+function value_of_yaml() {
+    local configFile="$2"
+    local version=`yq --version | tr ' ' '\n' | tail -n1 | cut -d '.' -f1`
+    version=`echo $version | sed  's/[^0-9.]*\([0-9.]*\).*/\1/'`
+    local value
+    if [[ $version -ge 4 ]]; then
+        value=`yq e ".$1" $configFile`
+    else
+        value=`yq r $configFile $1`
+    fi
+    echo $value
+}
+
 function config_value_of() {
     local configFile="$NOX_CONFIG/config.yaml"
     local version=`yq --version | tr ' ' '\n' | tail -n1 | cut -d '.' -f1`
+    version=`echo $version | sed  's/[^0-9.]*\([0-9.]*\).*/\1/'`
     local value
     if [[ $version -ge 4 ]]; then
         value=`yq e ".$1" $configFile`
@@ -16,7 +30,8 @@ function config_value_of() {
 
 function brewspec_value_of() {
     local configFile="$NOX_CONFIG/brewspec.yaml"
-    local version=`yq --version | cut -d ' ' -f3 | cut -d '.' -f1`
+    local version=`yq --version | tr ' ' '\n' | tail -n1 | cut -d '.' -f1`
+    version=`echo $version | sed  's/[^0-9.]*\([0-9.]*\).*/\1/'`
     local value
     if [[ $version -ge 4 ]]; then
         value=`yq e ".$1" $configFile`

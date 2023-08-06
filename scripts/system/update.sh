@@ -4,7 +4,7 @@
 ##
 ##  Filename: update.sh
 ##  Author: baocq
-##  E-mail: baocq@fenbi.com
+##  E-mail: baochuquan@163.com
 ##  Date: Sun Oct 25 22:09:03 CST 2020
 ##
 ##############################################################################
@@ -29,12 +29,12 @@ EOF
 }
 
 # getopt 命令格式说明:
-#   -o: 表示定义短选项
+#   --options: 表示定义短选项
 #       示例解释: ab:c:: 定义了三个选项类型。
 #           a 后面未带冒号，表示定义的 a 选项是开关类型(true/false)，不需要额外参数，使用 -a 选项即表示true。
 #           b 后面带冒号，表示定义的 b 选项需要额外参数，如: -b 30
 #           c 后面带双冒号，表示定义的 c 选项有一个可选参数，可选参数必须紧贴选项，如: -carg 而不能是 -c arg
-#   -long: 表示定义长选项
+#   --longoptions: 表示定义长选项
 #       示例解释: a-long,b-long:,c-long::。含义与上述基本一致。
 #   "$@": 表示参数本身的列表，也不包括命令本身
 #   -n: 表示出错时的信息
@@ -46,7 +46,7 @@ EOF
 function update() {
     local debug=0
 
-    local ARGS=`ggetopt -o h,x --long help,debug -n 'Error' -- "$@"`
+    local ARGS=`ggetopt --options h,x --longoptions help,debug -n 'Error' -- "$@"`
     if [ $? != 0 ]; then
         error "Invalid option..." >&2;
         exit 1;
@@ -100,7 +100,7 @@ function update() {
     nox system build -s
 
     success ""
-    print_logo
+    print_colorful_logo
     success "                                                                   ... update finished !"
     success ""
     success "        Before you use nox! Please execute \"source ~/.zshrc\" to make sure that the nox configurations are ready!"

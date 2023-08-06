@@ -4,7 +4,7 @@
 ##
 ##  Filename: build.sh
 ##  Author: baocq
-##  E-mail: baocq@fenbi.com
+##  E-mail: baochuquan@163.com
 ##  Date: Sun Oct 25 22:09:03 CST 2020
 ##
 ##############################################################################
@@ -61,7 +61,7 @@ function _subcmds_from_description() {
             warning "[nox] creating \`.description\` for ${dirName}..."
             echo "$dirName 相关功能" >> $descFile
         fi
-        local descOfCmd=`cat $descFile | head -n 1`
+        local descOfCmd=`cat $descFile | head -n 1 | gsed "s/^ *//g"`
         if [[ -z $descOfCmd ]]; then
             warning "[nox] the first line of \`$descFile\` is empty."
             warning "[nox] use default description for \`$descFile\`"
@@ -79,7 +79,7 @@ function _subcmds_from_description() {
         local prefixName=${scriptName%.*}
         local start=`ggrep "Description" -n $scriptName | head -n 1 | cut -d ":" -f1`
         start=$[ $start + 1 ]
-        local descOfScript=`cat $scriptName | tail -n +$start | head -n 1 | sed "s/^--//"`
+        local descOfScript=`cat $scriptName | tail -n +$start | head -n 1 | sed "s/^--//" | sed "s/^ *//g"`
         echo "`space $spaceCount`\"$prefixName:$descOfScript\"" >> $autocompleteFile
         index=$[ $index + 1 ]
     done
@@ -240,7 +240,7 @@ function build() {
     local debug=0
     local slient=0
 
-    local ARGS=`ggetopt -o h,x,s --long help,debug,slient -n 'Error' -- "$@"`
+    local ARGS=`ggetopt --options h,x,s --longoptions help,debug,slient -n 'Error' -- "$@"`
     if [ $? != 0 ]; then
         error "Invalid option..." >&2;
         exit 1;
@@ -303,7 +303,7 @@ function build() {
 
     if [[ $slient == 0 ]]; then
         success ""
-        print_logo
+        print_colorful_logo
         success "                                                                   ... build success !"
         success ""
         success "        Before you use nox! Please execute \"source ~/.zshrc\" to make sure that the nox configurations are ready!"

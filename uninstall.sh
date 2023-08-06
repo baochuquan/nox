@@ -21,8 +21,18 @@ unregister_nox_dependency
 
 _TARGET="/usr/local/bin"
 _TARGET_NOX="${_TARGET}/${NOX_NAME}"
-rm $_TARGET_NOX
-rm .noxrc
+if [[ -e $_TARGET_NOX ]]; then
+    if [[ `arch` == "arm64" ]]; then
+        sudo rm $_TARGET_NOX
+    else
+        rm $_TARGET_NOX
+    fi
+fi
+
+if [[ -e .noxrc ]]; then
+    rm .noxrc
+fi
+
 sed -i '' '/.noxrc/d' ~/.zshrc
 
 source $NOX_COMMON/logo.sh
@@ -31,7 +41,7 @@ source $NOX_COMMON/utils.sh
 # Uninstall success
 success ""
 success ""
-print_logo
+print_colorful_logo
 success "                                                                   ... is now uninstall!"
 success ""
 success "        Thanks for trying out nox."

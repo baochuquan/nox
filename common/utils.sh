@@ -4,17 +4,17 @@ source $NOX_COMMON/variables.sh
 
 # Judge whether a command exists or not
 function command_exists() {
-	command -v "$@" >/dev/null 2>&1
+    command -v "$@" >/dev/null 2>&1
 }
 
 # Print error into stdout
 function error() {
-	echo ${RED}"Error: $@"${RESET} >&2
+    echo ${RED}"Error: $@"${RESET} >&2
 }
 
 # Print success into stdout
 function success() {
-	echo ${GREEN}"$@"${RESET} >&2
+    echo ${GREEN}"$@"${RESET} >&2
 }
 
 # Print warning
@@ -24,7 +24,12 @@ function warning() {
 
 # Print underline content
 function underline() {
-    echo "$(printf '\033[4m')$@$(printf '\033[24m')"
+    echo ${UNDER}"$@"${RESET} >&2
+}
+
+# Print bold content
+function bold() {
+  echo ${BOLD}"$@"${RESET} >&2
 }
 
 # Print spaces witch specific count

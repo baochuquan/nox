@@ -19,7 +19,16 @@ function install_dependency() {
 function register_nox_dependency() {
     echo "[nox] start installing system dependencies..."
     # Installing gnu-getopt
-    local GGETOPT="/usr/local/bin/ggetopt"
+    local FOLDER="/usr/local/bin"
+    if [[ ! -d $FOLDER ]]; then
+        if [[ `arch` == "arm64" ]]; then
+            sudo mkdir $FOLDER
+        else
+            mkdir $FOLDER
+        fi
+    fi
+
+    local GGETOPT="$FOLDER/ggetopt"
     if [[ ! -x $GGETOPT ]]; then
         (check_dependency gnu-getopt) || (install_dependency gnu-getopt)
         local GNU_GETOPT=`brew list gnu-getopt | grep "bin"`
@@ -50,6 +59,10 @@ function register_nox_dependency() {
 function unregister_nox_dependency() {
     local GGETOPT="/usr/local/bin/ggetopt"
     if [[ -x $GGETOPT ]]; then
-        rm $GGETOPT
+        if [[ `arch` == "arm64" ]]; then
+            sudo rm $GGETOPT
+        else
+            rm $GGETOPT
+        fi
     fi
 }
