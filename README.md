@@ -105,7 +105,7 @@ For example, if we want to create a subdirectory named `poker`, we can execute t
 $ nox system create -d poker
 ```
 
-TODO: @baocq
+![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-system-create-poker.gif)
 
 Enter the newly created `poker` directory, we will find that there is a default hidden file named `.description` generated in the directory. This file describes the main functions of the scripts in the `poker` subdirectory category. The nox auto-completion system will read the description information from the `.description` file.
 
@@ -116,7 +116,7 @@ Based on the previous example, we can go to the `poker` subdirectory and create 
 $ nox system create -s ace
 ```
 
-TODO: @baocq
+![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-system-create-ace.gif)
 
 At this point, nox has created a script named `ace.sh` in the `poker` subdirectory. This script is a template script that can be executed directly. **Note: Since nox has not been build yet, the newly created subdirectory and script do not support auto-completion**. We need to manually enter the complete invocation command to execute the `ace.sh` script, as shown below:
 
@@ -124,7 +124,7 @@ At this point, nox has created a script named `ace.sh` in the `poker` subdirecto
 $ nox poker ace
 ```
 
-TODO: @baocq
+![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-poker-ace-01.gif)
 
 ## Edit Script
 Next, let's modify the `ace.sh` script so that it can print A, 2, 3, 4, 5, 6, 7, 9, 10, J, Q, K, Joker. And support two options:
@@ -182,8 +182,8 @@ EOF
 #           c Followed by a double colon, it means that the defined c option has an optional parameter, and the optional parameter must be close to the option, such as: `-carg` instead of `-c arg`
 #   -long: means define long options
 #       Example explanation: `a-long,b-long:,c-long::`. The meaning is basically the same as above.
-#   "$@": 表示参数本身的列表，也不包括命令本身
-#   -n: 表示出错时的信息
+#   "$@": a list representing the arguments, not including the command itself
+#   -n: indicates information when an error occurs
 #   --: A list representing the arguments themselves, not including the command itself
 #       How to create a directory with -f
 #       `mkdir -f` will fail because -f will be parsed as an option by mkdir
@@ -278,7 +278,7 @@ $ nox poker ace -c 2
 $ nox poker ace -c 2 -r
 ```
 
-TODO: @baocq
+![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-poker-ace-02.gif)
 
 ## Build
 After creating the subdirectories and scripts, although you can call the script through the system command, such as calling the script with `nox poker ace` in the previous example, there is no auto-completion feature. The nox system build command provided by nox is used to compile and generate an auto-completion file. After compilation, a `_nox` file will be generated and stored in the `NOX_ROOT/fpath` directory. After the compilation command is executed, you need to run the `source ~/.zshrc` command to make it take effect, or restart the terminal to make it take effect.
@@ -291,21 +291,21 @@ $ source ~/.zshrc
 
 The execution result is as follows:
 
-TODO: @baocq
+![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-system-build-poker-ace.gif)
 
 ## Debug Mode
 Scripts created by `nox system create` support a default `--debug` and `-x` option, which can switch the script execution to debug mode. Debug mode can print out each line of code executed by the script and its result, making it convenient for developers to debug.
 
 Taking `nox poker ace` as an example, you can use the following method to execute the script in debug mode.
 
-TODO: @baocq
+![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-poker-ace-debug.gif)
 
 ## Help prompt
 Scripts created by nox system create support a default `--help` and `-h` option, which can print out the usage instructions of the script. Inside each script, there is a method named `_usage_of_script_name`, which defines the usage instruction of the script.
 
 Taking nox poker ace as an example, you can use the following method to view the script's usage instructions.
 
-TODO: @baocq
+![](https://chuquan-public-r-001.oss-cn-shanghai.aliyuncs.com/nox/nox-poker-ace-help.gif)
 
 # Develop tips
 ## Environment variables

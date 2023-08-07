@@ -30,21 +30,25 @@ Option:
 EOF
 }
 
-# getopt 命令格式说明:
-#   -o: 表示定义短选项
-#       示例解释: ab:c:: 定义了三个选项类型。
-#           a 后面未带冒号，表示定义的 a 选项是开关类型(true/false)，不需要额外参数，使用 -a 选项即表示true。
-#           b 后面带冒号，表示定义的 b 选项需要额外参数，如: -b 30
-#           c 后面带双冒号，表示定义的 c 选项有一个可选参数，可选参数必须紧贴选项，如: -carg 而不能是 -c arg
-#   -long: 表示定义长选项
-#       示例解释: a-long,b-long:,c-long::。含义与上述基本一致。
-#   "$@": 表示参数本身的列表，也不包括命令本身
-#   -n: 表示出错时的信息
-#   --:
-#       如何创建一个 -f 的目录
-#       mkdir -f 会执行失败，因为 -f 会被 mkdir 当做选项来解析
-#       mkdir -- -f 会执行成功，-f 不会被当做选项
-
+##########################################################################################################################
+#
+# English note
+# getopt command format description:
+#   -o: means define short option
+#       Example explanation: `ab:c::` defines three option types.
+#           a There is no colon after a, which means that the defined a option is a switch type (true/false), and no additional parameters are required. Using the -a option means true.
+#           b Followed by a colon, it means that the defined b option requires additional parameters, such as: `-b 30`
+#           c Followed by a double colon, it means that the defined c option has an optional parameter, and the optional parameter must be close to the option, such as: `-carg` instead of `-c arg`
+#   -long: means define long options
+#       Example explanation: `a-long,b-long:,c-long::`. The meaning is basically the same as above.
+#   "$@": a list representing the arguments, not including the command itself
+#   -n: indicates information when an error occurs
+#   --: A list representing the arguments themselves, not including the command itself
+#       How to create a directory with -f
+#       `mkdir -f` will fail because -f will be parsed as an option by mkdir
+#       `mkdir -- -f` will execute successfully, -f will not be considered as an option
+#
+##########################################################################################################################
 function ace() {
     local debug=0
     local reverse=false
@@ -55,9 +59,9 @@ function ace() {
         error "Invalid option..." >&2;
         exit 1;
     fi
-    # 重新排列参数的顺序
+    # rearrange the order of parameters
     eval set -- "$ARGS"
-    # 经过 getopt 的处理，下面处理具体选项。
+    # after being processed by getopt, the specific options are dealt with below.
     while true ; do
         case "$1" in
             -h|--help)
