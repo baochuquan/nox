@@ -12,7 +12,7 @@ Description:
 
 Option:
     --help|-h:                                                  -- using help
-    --debug|-x:                                                 -- using help
+    --debug|-x:                                                 -- debug mode
 
 EOF
 }
