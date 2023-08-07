@@ -22,8 +22,8 @@ Description:
     获取首页当前截图，截图会放到用户目录下
 
 Option:
-    --help|-h:                                          -- 使用帮助
-    --debug|-x:                                         -- 调试模式
+    --help|-h:                                          -- using help
+    --debug|-x:                                         -- debug mode
 
 EOF
 }
@@ -51,9 +51,9 @@ function screencap() {
         error "Invalid option..." >&2;
         exit 1;
     fi
-    # 重新排列参数的顺序
+    # rearrange the order of parameters
     eval set -- "$ARGS"
-    # 经过 getopt 的处理，下面处理具体选项。
+    # after being processed by getopt, the specific options are dealt with below.
     while true ; do
         case "$1" in
             -h|--help)

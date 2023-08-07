@@ -11,8 +11,8 @@ Description:
     使用 Tab 提示，选择对应的子命令，从而索引到指定的脚本。使用选项/参数为脚本提供运行参数。
 
 Option:
-    --help|-h:                                                  -- 使用帮助
-    --debug|-x:                                                 -- 使用帮助
+    --help|-h:                                                  -- using help
+    --debug|-x:                                                 -- using help
 
 EOF
 }

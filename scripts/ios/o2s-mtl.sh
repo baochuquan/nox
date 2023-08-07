@@ -21,8 +21,8 @@ Description:
     将继承自 MTLModel 的 OC 类转换成 Swift 类
 
 Option:
-    --help|-h:                                          -- 使用帮助
-    --debug|-x:                                         -- 调试模式
+    --help|-h:                                          -- using help
+    --debug|-x:                                         -- debug mode
     --file|-f:                                          -- 待转换的文件名，不带文件格式后缀
 EOF
 }
@@ -221,9 +221,9 @@ function o2s_mtl() {
         error "Invalid option..." >&2;
         exit 1;
     fi
-    # 重新排列参数的顺序
+    # rearrange the order of parameters
     eval set -- "$ARGS"
-    # 经过 getopt 的处理，下面处理具体选项。
+    # after being processed by getopt, the specific options are dealt with below.
     while true ; do
         case "$1" in
             -h|--help)

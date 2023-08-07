@@ -23,8 +23,8 @@ Description:
     用于 nox 脚本开发，创建一个子目录或脚本
 
 Option:
-    --help|-h:                                          -- 使用帮助
-    --debug|-x:                                         -- 调试模式
+    --help|-h:                                          -- using help
+    --debug|-x:                                         -- debug mode
     --dir|-d:                                           -- 创建目录
     --script|-s:                                        -- 创建脚本
 
@@ -56,9 +56,9 @@ function create() {
         error "Invalid option..." >&2;
         exit 1;
     fi
-    # 重新排列参数的顺序
+    # rearrange the order of parameters
     eval set -- "$ARGS"
-    # 经过 getopt 的处理，下面处理具体选项。
+    # after being processed by getopt, the specific options are dealt with below.
     while true ; do
         case "$1" in
             -h|--help)

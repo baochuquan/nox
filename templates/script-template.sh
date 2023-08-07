@@ -42,8 +42,8 @@ EOF
 #           c Followed by a double colon, it means that the defined c option has an optional parameter, and the optional parameter must be close to the option, such as: `-carg` instead of `-c arg`
 #   -long: means define long options
 #       Example explanation: `a-long,b-long:,c-long::`. The meaning is basically the same as above.
-#   "$@": 表示参数本身的列表，也不包括命令本身
-#   -n: 表示出错时的信息
+#   "$@": a list representing the arguments, not including the command itself
+#   -n: indicates information when an error occurs
 #   --: A list representing the arguments themselves, not including the command itself
 #       How to create a directory with -f
 #       `mkdir -f` will fail because -f will be parsed as an option by mkdir

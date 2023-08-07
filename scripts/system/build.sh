@@ -22,8 +22,8 @@ Description:
     用于生成自动补全脚本
 
 Option:
-    --help|-h:                                          -- 使用帮助
-    --debug|-x:                                         -- 调试模式
+    --help|-h:                                          -- using help
+    --debug|-x:                                         -- debug mode
     --slient|-s:                                        -- 编译后不打印 Logo
 
 EOF
@@ -219,10 +219,10 @@ function _dfs() {
 
     echo "`space $spaceCount`_options=(" >> $autocompleteFile
     spaceCount=$[ $spaceCount + 4 ]
-    echo "`space $spaceCount`\"--help:使用帮助\"" >> $autocompleteFile
-    echo "`space $spaceCount`\"-h:使用帮助\"" >> $autocompleteFile
-    echo "`space $spaceCount`\"--debug:调试模式\"" >> $autocompleteFile
-    echo "`space $spaceCount`\"-x:调试模式\"" >> $autocompleteFile
+    echo "`space $spaceCount`\"--help:using help\"" >> $autocompleteFile
+    echo "`space $spaceCount`\"-h:using help\"" >> $autocompleteFile
+    echo "`space $spaceCount`\"--debug:debug mode\"" >> $autocompleteFile
+    echo "`space $spaceCount`\"-x:debug mode\"" >> $autocompleteFile
     spaceCount=$[ $spaceCount - 4 ]
     echo "`space $spaceCount`)" >> $autocompleteFile
     echo "`space $spaceCount`_describe -t options \"nox `_cmds_from_path` options\" _options" >> $autocompleteFile
@@ -243,9 +243,9 @@ function build() {
         error "Invalid option..." >&2;
         exit 1;
     fi
-    # 重新排列参数的顺序
+    # rearrange the order of parameters
     eval set -- "$ARGS"
-    # 经过 getopt 的处理，下面处理具体选项。
+    # after being processed by getopt, the specific options are dealt with below.
     while true ; do
         case "$1" in
             -h|--help)
